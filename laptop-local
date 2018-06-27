@@ -1,0 +1,64 @@
+#!/bin/sh
+
+fancy_echo "------- Setting Up Applications, dependencies, and dotfiles -------"
+
+# homebrew installations
+brew bundle --file=- <<EOF
+  cask "1password"
+  cask "acslogo"
+  cask "encryptr"
+  cask "google-chrome"
+  cask "imageoptim"
+  cask "iterm2"
+  cask "keybase"
+  cask "rescuetime"
+  cask "semaphor"
+  cask "todotxt"
+  cask "zwift"
+
+  # fonts
+  tap "caskroom/fonts"
+  cask "font-fira-code"
+  cask "font-source-code-pro"
+
+  # for dotfiles
+  tap "thoughtbot/formulae"
+  brew "rcm"
+
+  brew "mas" # Apple App Store integration
+
+  brew "hugo"
+
+  brew "go"
+  brew "terraform"
+
+  brew "ttygif"
+  brew "imageoptim-cli"
+
+EOF
+
+# install Apps From App Store
+mas install 568494494 # Pocket
+mas install 1225570693 # Ulysses
+mas install 1055511498 # Day One
+mas install 1142578753 # Omnigraffle 7
+mas install 803453959 # slack
+mas install 454948164 #TaskBadges
+
+# upgrade existing apps
+mas upgrade
+
+# gems
+gem_install_or_update "middleman"
+gem_install_or_update "middleman-blog"
+
+# bring in or pull from Thoughtbot's dotfiles
+if [ ! -d "$HOME/dotfiles" ]; then
+  git clone git://github.com/thoughtbot/dotfiles.git ~/dotfiles
+else
+  git -C ~/dotfiles pull origin master
+fi
+
+# source dotfiles
+env RCRC=$HOME/dotfiles/rcrc rcup
+
