@@ -3,7 +3,7 @@
 My local configuration setup for using [laptop](https://github.com/thoughtbot/laptop) to configure
 my development and digital life.
 
-Uses `mas` for App Store apps.
+Uses [mas](https://github.com/mas-cli/mas) for App Store apps.
 Uses [dotfiles](https://github.com/thoughtbot/dotfiles) for IDE config.
 
 Brew and Cask for other dependency installs.
