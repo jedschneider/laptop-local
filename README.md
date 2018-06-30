@@ -14,3 +14,20 @@ Brew and Cask for other dependency installs.
 2. Clone repo
 3. `sh laptop-local/setup`
 4. `sh laptop/mac` (re-run laptop script)
+
+## Other setup (reminders)
+
+- Keybase is installed, but it needs to be configured for the user. Open keybase
+  and be prepared with another keybase configured device to finish the 2FA.
+Keybase is where I store an encrypted `dmg` backup of my .ssh directory. So once
+keybase is connected I can pull down my ssh keys. This gives me access to github
+and other connected services.
+
+## Todo:
+
+1. Automate the backup of secrets.
+  - AWS Config files
+  - .ssh directory
+2. Fetch and bootstrap copies of cloud files (cloud storage vendor to be
+   determined)
+3. git configuration
