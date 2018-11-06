@@ -2,19 +2,31 @@
 
 fancy_echo "------- Setting Up Applications, dependencies, and dotfiles -------"
 
+fancy_echo "------- Some dependencies not managed with laptop -----------------"
+fancy_echo " * Sound Siphon"
+
 # homebrew installations
 brew bundle --file=- <<EOF
   cask "1password"
   cask "acslogo"
+  cask "adventure"
+  cask "encryptme"
   cask "encryptr"
   cask "google-chrome"
   cask "imageoptim"
   cask "iterm2"
   cask "keybase"
+  cask "ngrok"
   cask "rescuetime"
   cask "semaphor"
+  cask "spotify"
   cask "todotxt"
+  cask "veracrypt"
   cask "zwift"
+
+  # scanner
+  tap "homebrew/cask-drivers"
+  cask "fujitsu-scansnap-manager-s1300"
 
   # fonts
   tap "caskroom/fonts"
@@ -31,11 +43,23 @@ brew bundle --file=- <<EOF
 
   brew "go"
   brew "terraform"
+  brew "awscli"
+  brew "graphviz"
+
+  cask "docker"
 
   brew "ttygif"
   brew "imageoptim-cli"
 
+  brew "youtube-dl"
+
+  brew "zork"
+
 EOF
+
+# install asdf managed libraries
+
+install_asdf_plugin "elixir" "https://github.com/asdf-vm/asdf-elixir.git"
 
 # install Apps From App Store
 mas install 568494494 # Pocket
@@ -51,6 +75,7 @@ mas upgrade
 # gems
 gem_install_or_update "middleman"
 gem_install_or_update "middleman-blog"
+gem_install_or_update "pry"
 
 # bring in or pull from Thoughtbot's dotfiles
 if [ ! -d "$HOME/dotfiles" ]; then
