@@ -40,6 +40,7 @@ brew bundle --file=- <<EOF
   brew "mas" # Apple App Store integration
 
   brew "hugo"
+  brew "jq"
 
   brew "go"
   brew "terraform"
