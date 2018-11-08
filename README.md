@@ -3,6 +3,9 @@
 My local configuration setup for using [laptop](https://github.com/thoughtbot/laptop) to configure
 my development and digital life.
 
+[Medium
+article](https://medium.com/@jedschneider/laptop-local-a-devops-oriented-workflow-for-mac-os-x-ecc67c6badf)
+
 Uses [mas](https://github.com/mas-cli/mas) for App Store apps.
 Uses [dotfiles](https://github.com/thoughtbot/dotfiles) for IDE config.
 
