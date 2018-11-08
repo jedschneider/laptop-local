@@ -33,4 +33,4 @@ and other connected services.
   - .ssh directory
 2. Fetch and bootstrap copies of cloud files (cloud storage vendor to be
    determined)
-3. git configuration
+3. ~~git configuration~~ (pulled in via dotfiles-local now)
