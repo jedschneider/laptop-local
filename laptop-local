@@ -61,6 +61,7 @@ EOF
 # install asdf managed libraries
 
 install_asdf_plugin "elixir" "https://github.com/asdf-vm/asdf-elixir.git"
+install_asdf_plugin "erlang" "https://github.com/asdf-vm/asdf-erlang.git"
 
 # install Apps From App Store
 mas install 568494494 # Pocket
