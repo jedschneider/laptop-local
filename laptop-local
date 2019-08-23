@@ -30,7 +30,7 @@ brew bundle --file=- <<EOF
 
   # fonts
   tap "caskroom/fonts"
-  cask "font-fira-code"
+  cask "homebrew/cask-fonts/font-fira-code"
   cask "font-source-code-pro"
 
   # for dotfiles
